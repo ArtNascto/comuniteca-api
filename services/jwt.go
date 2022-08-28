@@ -63,7 +63,7 @@ func (service *jwtServices) GenerateToken(userName string) (string, int64) {
 func (service *jwtServices) ValidateToken(encodedToken string) (*jwt.Token, error) {
 	return jwt.Parse(encodedToken, func(token *jwt.Token) (interface{}, error) {
 		if _, isvalid := token.Method.(*jwt.SigningMethodHMAC); !isvalid {
-			return nil, fmt.Errorf("Invalid token", token.Header["alg"])
+			return nil, fmt.Errorf("invalid token %v", token.Header["alg"])
 
 		}
 		return []byte(service.secretKey), nil
