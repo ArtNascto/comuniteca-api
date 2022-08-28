@@ -1,0 +1,11 @@
+db:
+  host: localhost
+  user: postgres
+  pwd: postgres
+  name: comuniteca
+  port: 5432
+jwt:
+  secret: "123qwe"
+adm:
+  password: "123qwe"
+  email: "adm_comuniteca@gmail.com"
